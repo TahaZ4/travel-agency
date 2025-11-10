@@ -31,7 +31,11 @@ const newTrip={
         currencyCode,
         dailycost:flightCost+accomationCost+mealCost+visaCost+transportationCost
 };
-
+NEW//Set cookie 
+res.cookie('Tripcreated', destinationName, {
+    maxAge: 15 * 60 * 1000, // 15 min
+    httpOnly: true
+}};
 trips.push(newTrip);
 
 const db_access = require('../db.js');
